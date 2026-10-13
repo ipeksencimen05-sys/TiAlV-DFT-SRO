@@ -1,0 +1,42 @@
+{
+    "project_title": "ML Prediction of DFT Configurational Energies in Ti-Al-V",
+    "source": {
+        "authors": "Allen and Bartok",
+        "publication_year": 2025,
+        "dataset_url": "https://zenodo.org/records/15114121",
+        "original_filename": "ti64_combined_data_Apr08.extxyz",
+        "sha256": "85d48a7756c80f0e577056ebc52a16e45fb06b94491feef601587528ee6469cf",
+        "data_type": "DFT atomistic configurations"
+    },
+    "data_selection": {
+        "total_source_configurations": 8507,
+        "selected_configurations": 50,
+        "composition": "Ti13Al2V",
+        "phase_label": "hcp",
+        "selection_method": "Same composition and volume group",
+        "random_state": 42
+    },
+    "target": {
+        "name": "DFT_energy_per_atom",
+        "unit": "eV/atom",
+        "description": "DFT total energy divided by number of atoms"
+    },
+    "descriptors": {
+        "SRO_Ti_Al": "dimensionless",
+        "SRO_Ti_V": "dimensionless",
+        "SRO_Al_V": "dimensionless",
+        "mean_neighbor_distance": "Angstrom",
+        "std_neighbor_distance": "Angstrom",
+        "min_shell_gap": "Angstrom",
+        "volume_per_atom": "Angstrom^3/atom"
+    },
+    "processing_notes": [
+        "First 12 nearest neighbors used as local chemical descriptors",
+        "Periodic boundary conditions considered",
+        "Neighbor search cutoff: 5 Angstrom",
+        "Relative energy referenced to minimum energy of selected 50 structures",
+        "SRO values are finite-cell descriptors, not converged bulk SRO",
+        "Original DFT dataset retained unchanged"
+    ],
+    "missing_values": 0
+}
